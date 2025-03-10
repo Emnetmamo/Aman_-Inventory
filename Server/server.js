@@ -12,7 +12,18 @@ const CustomerRoutes = require("./routes/CustomerRoutes");
 const OrderRoutes = require('./routes/OrderRoutes');
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: "", // Replace wth front end api
+    methods: ["POST", "GET", "DELETE", "PUT"],
+    credentials: true,
+  })
+);
+
+app.get("/", (req, res) => {
+  res.send("Hello, this is your server running on Vercel!");
+});
+
 app.use(express.json()); // Parse JSON
 
 // MongoDB connection
