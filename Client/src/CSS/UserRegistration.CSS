@@ -1,0 +1,73 @@
+/* UserRegistration.CSS */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+  }
+  
+  h3 {
+    font-size: 2rem;
+    color: rgb(0, 0, 0) !important;
+    font-weight: 700;
+  }
+  
+  .container-fluid {
+    background-color: #f4f7fa;
+  }
+  
+  .bg-gradient {
+    background: linear-gradient(135deg, #F97B07, #0C9B78);
+  }
+  
+  .registration-card {
+    background: rgba(255, 255, 255, 0.85); /* semi-transparent background */
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(15px); /* blur effect behind the card */
+  }
+  
+  .registration-input {
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .registration-input:focus {
+    border-color: #F97B07; /* Focus effect */
+    box-shadow: 0 0 10px rgba(249, 123, 7, 0.4);
+  }
+  
+  .registration-btn {
+    background-color: #F97B07;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 12px;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .registration-btn:hover {
+    background-color: #0C9B78; /* Button hover effect */
+  }
+  
+  .alert {
+    margin-bottom: 20px;
+  }
+  
+  @media (max-width: 767px) {
+    .d-none.d-md-block {
+      display: none;
+    }
+  
+    .bg-gradient {
+      background: linear-gradient(135deg, #F97B07, #0C9B78);
+    }
+  
+    .registration-card {
+      padding: 25px;
+    }
+  }
+  

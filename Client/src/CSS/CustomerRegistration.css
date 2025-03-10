@@ -1,0 +1,56 @@
+/* General Page Styling */
+
+.registration-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(37, 184, 157, 0.01);
+}
+
+.registration-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #1ca382;
+    margin-bottom: 30px;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-size: 1.1rem;
+    color: #333;
+    display: block;
+    text-align: left;
+}
+
+.form-control {
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #1ca382;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #17a374;
+}
+
+.submit-btn:active {
+    background-color: #138c5c;
+}

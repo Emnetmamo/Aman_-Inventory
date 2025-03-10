@@ -1,0 +1,15 @@
+/* Layout.css */
+.layout {
+    display: flex;
+  }
+  
+  .page-content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 250px; /* Adjust based on the sidebar width */
+  }
+  
+  .sidebar.collapsed + .page-content {
+    margin-left: 80px; /* Adjust based on the collapsed sidebar width */
+  }
+  

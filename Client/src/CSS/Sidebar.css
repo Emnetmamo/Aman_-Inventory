@@ -1,0 +1,97 @@
+/* Sidebar.css */
+
+.sidebar {
+    width: 250px;
+    background-color: #343a40;
+    color: white;
+    transition: width 0.3s ease;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .sidebar.collapsed {
+    width: 80px;
+  }
+  
+  .sidebar-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    width: 100%;
+  }
+  
+  .sidebar-header .user-image {
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    margin-bottom: 10px;
+  }
+  
+  .sidebar-header .user-name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .sidebar-header .admin-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .sidebar .toggle-btn {
+    cursor: pointer;
+    margin: 10px;
+  }
+  
+  .sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .sidebar-list li {
+    width: 80%;
+    padding: 15px;
+    background-color: #70767d;
+    border-radius: 10px;
+    margin: 10px;
+  }
+  
+  .sidebar-list li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .sidebar-list li a span {
+    margin-left: 10px;
+  }
+  
+  .sidebar-list li a:hover {
+    color: #e9da34;
+    padding: 5px;
+    border-radius: 10px;
+  }
+  
+  .sidebar-list li a.active {
+    color: #e9da34;
+    padding: 5px;
+    border-radius: 10px;
+  }
+  
+  .sidebar.collapsed .sidebar-list li a span {
+    display: none;
+  }
+  
+  .sidebar.collapsed .sidebar-header {
+    display: none; /* Hide user info and Admin title when collapsed */
+  }
+  

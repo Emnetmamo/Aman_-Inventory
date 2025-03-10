@@ -1,0 +1,141 @@
+/* General Styles */
+.order-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .order-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .order-form {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1200px;
+    gap: 30px;
+  }
+  
+  .order-left, .order-right {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .order-left {
+    border-right: 1px solid #ddd;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  .add-product-btn, .submit-btn {
+    padding: 12px 20px;
+    background-color: #0c9b78;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+  }
+  
+  .add-product-btn:hover, .submit-btn:hover {
+    background-color: #f97b07;
+  }
+  
+  .order-summary {
+    margin-top: 20px;
+  }
+  
+  .order-summary-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative; /* Make sure the delete icon is positioned relative to the container */
+  }
+  
+  .order-summary-item-detail {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .order-summary-item-detail span {
+    margin-left: 8px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: red;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .delete-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .delete-btn:hover {
+    color: darkred;
+  }
+  
+
+
+  .submit-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Adds spacing below the form */
+}
+
+.submit-btn {
+    padding: 12px 20px;
+    background-color: #0c9b78;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px; /* Make it a fixed width */
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.submit-btn:hover {
+    background-color: #f97b07;
+}
+

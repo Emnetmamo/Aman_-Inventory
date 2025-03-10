@@ -1,0 +1,69 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container-fluid {
+  height: 100vh;
+  background-color: transparent;
+}
+
+img {
+  object-fit: cover;
+  filter: brightness(70%);
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.85); /* Semi-transparent background */
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 5);
+  backdrop-filter: blur(15px); /* Apply blur effect behind the card */
+}
+
+.login-input {
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.login-input:focus {
+  border-color: #F97B07;
+  box-shadow: 0 0 10px rgba(249, 123, 7, 0.4);
+}
+
+.login-btn {
+  background-color: #F97B07;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 12px;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #0C9B78;
+}
+
+.text-muted {
+  color: #6c757d;
+  text-decoration: none;
+}
+
+.text-muted:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 767px) {
+  .d-none.d-md-block {
+      display: none;
+  }
+
+  .login-card {
+      padding: 25px;
+  }
+}

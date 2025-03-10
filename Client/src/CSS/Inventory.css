@@ -1,0 +1,62 @@
+/* General Page Styling */
+#inventory-page {
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+  }
+  
+  .inventory-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #1ca382;
+    font-weight: bold;
+  }
+  
+  /* Tab Styling */
+  .inventory-tabs .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .inventory-tabs .nav-link .tab-icon {
+    margin-right: 8px;
+    font-size: 1.5rem;
+  }
+  
+  .inventory-tabs .nav-link.active {
+    background-color: #1ca382;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .inventory-tabs .nav-link:hover {
+    color: #1ca382;
+    background-color: rgba(28, 163, 130, 0.1);
+  }
+  
+  /* Tab Content Styling */
+  .tab-content {
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tab-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #1ca382;
+  }
+  
+  .tab-content p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+  }
+  
