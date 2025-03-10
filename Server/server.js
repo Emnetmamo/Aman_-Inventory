@@ -20,6 +20,10 @@ app.use(
   })
 );
 
+app.get("/", (req, res) => {
+  res.send("Hello, this is your server running on Vercel!");
+});
+
 app.use(express.json()); // Parse JSON
 
 // MongoDB connection
