@@ -14,7 +14,7 @@ const OrderRoutes = require('./routes/OrderRoutes');
 const app = express();
 app.use(
   cors({
-    origin: "", // Replace wth front end api
+    origin: "https://aman-inventory-frontend.vercel.app", // Replace wth front end api
     methods: ["POST", "GET", "DELETE", "PUT"],
     credentials: true,
   })
