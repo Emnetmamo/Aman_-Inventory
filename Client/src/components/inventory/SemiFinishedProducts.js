@@ -21,10 +21,10 @@ function SemiFinishedProducts() {
   const [editModal, setEditModal] = useState(false);
   const [editProduct, setEditProduct] = useState(null);
   const [editStage, setEditStage] = useState('');
-
+  axios.defaults.withCredentials = true;
   useEffect(() => {
     axios
-      .get('http://localhost:5000/api/inventory/semiFinishedProduct/categories')
+      .get('https://amaninventoryserver.vercel.app/api/inventory/semiFinishedProduct/categories')
       .then((response) => setCategories(response.data))
       .catch((err) => console.error(err));
 
@@ -33,7 +33,7 @@ function SemiFinishedProducts() {
 
   const reloadData = () => {
     axios
-      .get('http://localhost:5000/api/inventory/semiFinishedProduct')
+      .get('https://amaninventoryserver.vercel.app/api/inventory/semiFinishedProduct')
       .then((response) => {
         const filteredData = response.data.filter(
           (item) => item.stage.name !== 'Finished'
@@ -50,7 +50,7 @@ function SemiFinishedProducts() {
     setSelectedCategory(categoryId);
 
     axios
-      .get(`http://localhost:5000/api/inventory/semiFinishedProduct/products/${categoryId}`)
+      .get(`https://amaninventoryserver.vercel.app/api/inventory/semiFinishedProduct/products/${categoryId}`)
       .then((response) => {
         setProducts(response.data);
       })
@@ -70,7 +70,7 @@ function SemiFinishedProducts() {
     };
 
     axios
-      .post('http://localhost:5000/api/inventory/semiFinishedProduct', newProduct)
+      .post('https://amaninventoryserver.vercel.app/api/inventory/semiFinishedProduct', newProduct)
       .then(() => {
         toast.success('Semi-finished product added successfully!');
         resetModalFields(); // Reset modal fields after submission
@@ -117,13 +117,13 @@ function SemiFinishedProducts() {
     };
   
     axios
-      .put(`http://localhost:5000/api/inventory/semiFinishedProduct/${editProduct._id}`, updatedProductData)
+      .put(`https://amaninventoryserver.vercel.app/api/inventory/semiFinishedProduct/${editProduct._id}`, updatedProductData)
       .then((response) => {
         if (response.data.stage.name === 'Finished') {
           const { category, product, quantity } = response.data;
   
           axios
-            .get(`http://localhost:5000/api/inventory/finishedProducts/${product._id}`)
+            .get(`https://amaninventoryserver.vercel.app/api/inventory/finishedProducts/${product._id}`)
             .then((finishedProductResponse) => {
               if (finishedProductResponse.data) {
                 const updatedFinishedProduct = finishedProductResponse.data;
@@ -135,7 +135,7 @@ function SemiFinishedProducts() {
   
                 axios
                   .put(
-                    `http://localhost:5000/api/inventory/finishedProducts/${updatedFinishedProduct._id}`,
+                    `https://amaninventoryserver.vercel.app/api/inventory/finishedProducts/${updatedFinishedProduct._id}`,
                     updatedFinishedProduct
                   )
                   .then(() => {
@@ -152,7 +152,7 @@ function SemiFinishedProducts() {
                 };
   
                 axios
-                  .post('http://localhost:5000/api/inventory/finishedProducts', newFinishedProduct)
+                  .post('https://amaninventoryserver.vercel.app/api/inventory/finishedProducts', newFinishedProduct)
                   .then(() => {
                     toast.success('Finished product created successfully!');
                     reloadData();

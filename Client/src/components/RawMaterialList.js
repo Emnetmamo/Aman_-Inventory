@@ -15,9 +15,9 @@ function RawMaterialList() {
   const [searchTerm, setSearchTerm] = useState('');
   const [activePopoverIndex, setActivePopoverIndex] = useState(null);
   const popoverRef = useRef();
-
+  axios.defaults.withCredentials = true;
   useEffect(() => {
-    axios.get('http://localhost:5000/api/raw-materials').then((res) => {
+    axios.get('https://amaninventoryserver.vercel.app/api/raw-materials').then((res) => {
       setRawMaterials(res.data.reverse());
     });
   }, []);
@@ -45,7 +45,7 @@ function RawMaterialList() {
     }
 
     axios
-      .post('http://localhost:5000/api/raw-materials', newMaterial)
+      .post('https://amaninventoryserver.vercel.app/api/raw-materials', newMaterial)
       .then((res) => {
         setRawMaterials([res.data, ...rawMaterials]);
         setNewMaterial({ name: '', price: '' });
@@ -64,7 +64,7 @@ function RawMaterialList() {
   const handleSave = (index) => {
     const material = rawMaterials[index];
     axios
-      .put(`http://localhost:5000/api/raw-materials/${material._id}`, editMaterial)
+      .put(`https://amaninventoryserver.vercel.app/api/raw-materials/${material._id}`, editMaterial)
       .then((res) => {
         const updatedMaterials = [...rawMaterials];
         updatedMaterials[index] = res.data;
@@ -90,7 +90,7 @@ function RawMaterialList() {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`http://localhost:5000/api/raw-materials/${id}`)
+          .delete(`https://amaninventoryserver.vercel.app/api/raw-materials/${id}`)
           .then(() => {
             setRawMaterials(rawMaterials.filter((_, i) => i !== index));
             Swal.fire("Deleted!", "Your material has been deleted.", "success");

@@ -15,11 +15,11 @@ function FinishedProducts() {
   const [finishedProducts, setFinishedProducts] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-
+  axios.defaults.withCredentials = true;
   useEffect(() => {
     // Fetch initial data when the component mounts
     axios
-      .get("http://localhost:5000/api/inventory/finishedProduct/categories")
+      .get("https://amaninventoryserver.vercel.app/api/inventory/finishedProduct/categories")
       .then((response) => setCategories(response.data))
       .catch((err) => console.error(err));
 
@@ -39,7 +39,7 @@ function FinishedProducts() {
     setSelectedProduct(""); // Reset selected product when category changes
 
     axios
-      .get(`http://localhost:5000/api/inventory/finishedProduct/products/${categoryId}`)
+      .get(`https://amaninventoryserver.vercel.app/api/inventory/finishedProduct/products/${categoryId}`)
       .then((response) => setProducts(response.data))
       .catch((err) => console.error(err));
   };
@@ -70,7 +70,7 @@ function FinishedProducts() {
     };
 
     axios
-      .post("http://localhost:5000/api/inventory/finishedProduct", newProduct)
+      .post("https://amaninventoryserver.vercel.app/api/inventory/finishedProduct", newProduct)
       .then((response) => {
         toast.success("Finished product added successfully!");
         setShowModal(false);
@@ -104,7 +104,7 @@ function FinishedProducts() {
 
   const reloadFinishedProducts = () => {
     axios
-      .get("http://localhost:5000/api/inventory/finishedProduct")
+      .get("https://amaninventoryserver.vercel.app/api/inventory/finishedProduct")
       .then((response) => {
         // Map over products and calculate totalQuantity
         const updatedProducts = response.data.map((product) => {

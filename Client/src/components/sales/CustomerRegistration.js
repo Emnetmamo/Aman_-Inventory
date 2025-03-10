@@ -13,6 +13,7 @@ function CustomerRegistration() {
     tinNumber: ''
   });
 
+  axios.defaults.withCredentials = true;
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -20,7 +21,7 @@ function CustomerRegistration() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/sales/customer/register', formData);
+      const response = await axios.post('https://amaninventoryserver.vercel.app/api/sales/customer/register', formData);
       toast.success('Customer registered successfully');
       setFormData({ customerName: '', phoneNumber: '', address: '', email: '', tinNumber: '' });
     } catch (error) {

@@ -28,9 +28,10 @@ function ProductList() {
 
   const [searchTerm, setSearchTerm] = useState('');
 
+  axios.defaults.withCredentials = true;
   // Fetch product categories from the backend
   useEffect(() => {
-    axios.get('http://localhost:5000/api/product-categories')
+    axios.get('https://amaninventoryserver.vercel.app/api/product-categories')
       .then(response => {
         setCategories(response.data);
       })
@@ -39,7 +40,7 @@ function ProductList() {
 
   // Fetch products from the backend
   useEffect(() => {
-    axios.get('http://localhost:5000/api/products')
+    axios.get('https://amaninventoryserver.vercel.app/api/products')
       .then(response => {
         setProducts(response.data);
       })
@@ -99,7 +100,7 @@ function ProductList() {
       totalCost: newProduct.totalCost,
     };
   
-    axios.post('http://localhost:5000/api/products/add', productData)
+    axios.post('https://amaninventoryserver.vercel.app/api/products/add', productData)
       .then(response => {
         setProducts([response.data, ...products]); // Add new product at the top
         setShowModal(false);

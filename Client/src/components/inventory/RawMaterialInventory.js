@@ -17,10 +17,10 @@ function RawMaterialInventory() {
     date: '', 
   });
   const [searchQuery, setSearchQuery] = useState('');
-
+  axios.defaults.withCredentials = true;
   // Fetch raw materials from the backend
   useEffect(() => {
-    axios.get('http://localhost:5000/api/raw-materials')
+    axios.get('https://amaninventoryserver.vercel.app/api/raw-materials')
       .then(response => setRawMaterials(response.data.reverse()))
       .catch(error => console.error('Error fetching raw materials:', error));
   }, []);
@@ -51,10 +51,10 @@ function RawMaterialInventory() {
       const materialToUpdate = rawMaterials.find(material => material.name === selectedMaterial.name);
       if (materialToUpdate) {
         // Send PUT request to update the raw material
-        await axios.put(`http://localhost:5000/api/inventory/raw-materials/${materialToUpdate._id}`, updatedMaterial);
+        await axios.put(`https://amaninventoryserver.vercel.app/api/inventory/raw-materials/${materialToUpdate._id}`, updatedMaterial);
   
         // Fetch updated raw materials after successful update
-        const response = await axios.get('http://localhost:5000/api/raw-materials');
+        const response = await axios.get('https://amaninventoryserver.vercel.app/api/raw-materials');
         setRawMaterials(response.data);
 
         // Show success toast

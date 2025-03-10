@@ -19,10 +19,11 @@ function ProductCategories() {
   const [rawMaterialsData, setRawMaterialsData] = useState([]);
   const [totalWeightPercent, setTotalWeightPercent] = useState(0);
 
+  axios.defaults.withCredentials = true;
   useEffect(() => {
     const fetchRawMaterials = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/raw-materials');
+        const response = await axios.get('https://amaninventoryserver.vercel.app/api/raw-materials');
         setRawMaterialsData(response.data);
       } catch (error) {
         console.error('Error fetching raw materials:', error);
@@ -35,7 +36,7 @@ function ProductCategories() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/product-categories');
+        const response = await axios.get('https://amaninventoryserver.vercel.app/api/product-categories');
         // Sort categories by latest first, assuming each category has a `createdAt` timestamp
         const sortedCategories = response.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
         setCategories(sortedCategories);
@@ -85,7 +86,7 @@ function ProductCategories() {
     const newCategoryWithDate = { ...newCategory, id: categoryId, createdAt: new Date().toISOString() };
   
     try {
-      await axios.post('http://localhost:5000/api/product-categories', newCategoryWithDate);
+      await axios.post('https://amaninventoryserver.vercel.app/api/product-categories', newCategoryWithDate);
       setCategories([newCategoryWithDate, ...categories]); // Insert at the top
       setNewCategory({ id: '', name: '', rawMaterials: [{ rawMaterial: '', weightPercent: '', costPerKg: 0 }] });
       setShowModal(false);
